@@ -1,0 +1,50 @@
+抓包部分：
+修改 phb/src/main/java/com/hbase/HBaseSender.java 中的 
+
+_quorum = "127.0.0.1";  // 可以是列表，格式如：192.168.0.1;192.168.0.2 
+_port = "2181";
+
+然后编译phb 进行打包
+mvn assembly:assembly
+
+启动抓包程序：
+sudo java -cp phb-1.0-SNAPSHOT-jar-with-dependencies.jar com.zzb.phb
+
+
+数据包回溯web服务:
+修改phb-service/src/resources/下的相关文件，
+把hbase 相关配置修改成相应环境的地址。
+
+然后编译phb-service进行打包
+mvn assembly:assembly
+
+启动服务
+java -cp phb-service-1.0-SNAPSHOT-jar-with-dependencies.jar com.zzb.pcapservice.rest.PcapService -port 80
+
+
+GET:
+pcapGetter/getPcapsByKeys (根据索引)
+	param:	keys
+		lastRowKey
+		startTime（默认-1）
+		endTime （默认-1）
+		includeDuplicateLastRow
+		includeReverseTraffic
+		maxResponseSize
+
+pcapGetter/getPcapsByKeyRange (根据索引范围)
+		startKey String startKey,
+		endKeyString endKey,
+		maxResponseSize String maxResponseSize,
+		startTime（默认-1）
+		endTime （默认-1）
+
+pcapGetter/getPcapsByIdentifiers(根据特征，地址，端口等)
+		srcIp
+		dstIp
+		protocol
+		srcPort
+		dstPort
+		startTime（默认-1）
+		endTime（默认-1）		
+		includeReverseTraffic(默认"false"）

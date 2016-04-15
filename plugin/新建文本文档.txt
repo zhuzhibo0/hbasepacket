@@ -1,0 +1,12 @@
+#!/bin/sh
+sudo apt-get install automake
+sudo apt-get install libtool
+sudo apt-get install flex
+sudo apt-get install bison
+sudo apt-get install pkgconfig
+sudo apt-get install gcc-c++
+sudo apt-get install boost-devel
+sudo apt-get install libevent-devel
+sudo apt-get install zlib-devel
+sudo apt-get install python-devel
+sudo apt-get install ruby-devel

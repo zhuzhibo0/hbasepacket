@@ -1,0 +1,24 @@
+1.解压 hadoop，hbase 到/opt/hadoop/
+
+2.配置环境变量：
+  vim /etc/profile
+  export HADOOP_HOME=/opt/hadoop/hadoop-2.6.0
+  export PATH=.:$HADOOP_HOME/bin:$JAVA_HOME/bin:$PATH
+  source /etc/profile
+
+3.配置hadoop：
+  修改配置文件
+  vim etc/hadoop/core-site.xml 
+  vim etc/hadoop/hdfs-site.xml 
+  vim etc/hadoop/hadoop-env.sh 
+  vim etc/hadoop/yarn-site.xml 
+
+  hadoop namenode -format
+  ./sbin/start-all.sh
+
+4.配置Hbase：
+  ./hbase-daemon.sh start thrift
+  ./start-hbase.sh
+
+
+
