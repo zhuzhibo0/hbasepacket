@@ -22,7 +22,7 @@ public class PcapService {
 		context.setContextPath("/");
 		System.out.printf(context.toString()+"\n");
 		ServletHolder h = new ServletHolder(new HttpServletDispatcher());
-		h.setInitParameter("javax.ws.rs.Application", "com.ctrip.pcapservice.rest.JettyServiceRunner");
+		h.setInitParameter("javax.ws.rs.Application", "com.zzb.pcapservice.rest.JettyServiceRunner");
         System.out.printf(h.toString()+"\n");
 		context.addServlet(h, "/*");
 		server.setHandler(context);
