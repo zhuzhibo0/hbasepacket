@@ -8,31 +8,31 @@
 ###GET:
 ####/pcap/pcapGetter/getPcapsByKeys (根据索引)
 ####param:
-	keys        [存储的原始数据包的索引key  例如 ]</br>
+	keys        [存储的原始数据包的索引key  例如 ]
 	lastRowKey</br>
-	startTime   [查询开始时间戳  如果为空表示从0开始]</br>
-	endTime     [查询结束时间戳  如果为空表示当前时间]</br>
-	includeDuplicateLastRow</br>
-	includeReverseTraffic</br>
-	maxResponseSize</br>
+	startTime   [查询开始时间戳  如果为空表示从0开始]
+	endTime     [查询结束时间戳  如果为空表示当前时间]
+	includeDuplicateLastRow
+	includeReverseTraffic
+	maxResponseSize
 	
 ####/pcap/pcapGetter/getPcapsByKeyRange (根据索引范围)
-    startKey String startKey,</br>
-	endKeyString endKey,</br>
-	maxResponseSize String maxResponseSize,</br>
-	startTime   [查询开始时间戳  如果为空表示从0开始]</br>
-	endTime     [查询结束时间戳  如果为空表示当前时间]</br>
+    startKey String startKey,
+	endKeyString endKey,
+	maxResponseSize String maxResponseSize,
+	startTime   [查询开始时间戳  如果为空表示从0开始]
+	endTime     [查询结束时间戳  如果为空表示当前时间]
 
 例如:</br>
 获取从时间戳1454577250386到当前时间的所有数据包</br>
 http://127.0.0.1/pcap/pcapGetter/getPcapsByKeyRange?startKey=0-0-0-0-0-0-0-0&endKey=ffffffff-ffffffff-999-99999-99999-99999-99999&startTime=1454577250386</br>
 		
 ####/pcap/pcapGetter/getPcapsByIdentifiers(根据特征，地址，端口等)
-    srcIp</br>
-	dstIp</br>
-	protocol</br>
-	srcPort</br>
-	dstPort</br>
-	startTime   [查询开始时间戳  如果为空表示从0开始]</br>
-	endTime     [查询结束时间戳  如果为空表示当前时间]</br>
-	includeReverseTraffic(默认"false"）</br>
+    srcIp
+	dstIp
+	protocol
+	srcPort
+	dstPort
+	startTime   [查询开始时间戳  如果为空表示从0开始]
+	endTime     [查询结束时间戳  如果为空表示当前时间]
+	includeReverseTraffic(默认"false"）
